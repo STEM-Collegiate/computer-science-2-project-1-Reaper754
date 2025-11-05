@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqb7t5ikc4jx"]
+
+[ext_resource type="Script" uid="uid://dtpweqn8jvgjh" path="res://Scenes/ui.gd" id="1_qdvrb"]
+[ext_resource type="FontFile" uid="uid://cfvyr5jhxrdch" path="res://Assets/Fonts/joystix monospace.otf" id="2_nf4gj"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_qdvrb")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+
+[node name="LabelContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="PointsLabel" type="Label" parent="MarginContainer/LabelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_nf4gj")
+theme_override_font_sizes/font_size = 20
+text = "0
+"
+
+[node name="LifesContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GameOverLabel" type="Label" parent="MarginContainer/CenterContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9999998, 0.05557351, 0.2033476, 1)
+theme_override_fonts/font = ExtResource("2_nf4gj")
+theme_override_font_sizes/font_size = 120
+text = "Game Over!
+"

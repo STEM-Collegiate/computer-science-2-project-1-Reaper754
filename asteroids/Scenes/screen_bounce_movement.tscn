@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://lv7661k0wetu"]
+
+[ext_resource type="Script" uid="uid://7jxirai74bga" path="res://Scenes/screen_bounce_movement.gd" id="1_8sknw"]
+
+[node name="screenbouncemovement" type="Node"]
+script = ExtResource("1_8sknw")

@@ -1,0 +1,29 @@
+[gd_scene load_steps=8 format=3 uid="uid://xa3h25n1hkyl"]
+
+[ext_resource type="PackedScene" uid="uid://dnswmn5i0maj6" path="res://Scenes/Player.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://bhnkqcj48mixy" path="res://Scenes/asteroids_spawner.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://b4h0h1r7ngl7u" path="res://Scenes/ufo_spawner.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://cg3ux1fyx2vml" path="res://Scenes/ufo.tscn" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://bb0sg8jl2pl61" path="res://Scenes/lifes_manager.gd" id="5_kry3j"]
+[ext_resource type="AudioStream" uid="uid://y38ml0dv3ksk" path="res://Assets/Audio/explosion.ogg" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://cqb7t5ikc4jx" path="res://Scenes/ui.tscn" id="7_6bp64"]
+
+[node name="Main" type="Node"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="Player" parent="." instance=ExtResource("1_jjgbg")]
+
+[node name="AsteroidsSpawner" parent="." instance=ExtResource("2_bo1nx")]
+
+[node name="UFOSpawner" parent="." instance=ExtResource("3_8gbba")]
+ufo_scene = ExtResource("4_jjvhh")
+
+[node name="LifesManager" type="Node" parent="."]
+script = ExtResource("5_kry3j")
+
+[node name="ExplosionAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_21xkr")
+
+[node name="UI" parent="." instance=ExtResource("7_6bp64")]
